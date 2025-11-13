@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Let's Play!</title>
+</head>
+<body>
+  <main>
+    <header class="main-header">
+      <h3 class="main-header__title">Rock Paper Scissors</h3>
+    </header>
+
+    <section class="main-sec__welcome">
+      <h1 class="main-sec__welcome--title">Let's Play:</h1>
+      <h2 class="main-sec__welcome--subtitle">Rock Paper Scissors!</h2>
+    </section>
+
+    <section class="game-sec">
+      <form class="game-sec__form" id="game-form">
+        <label class="form__dir">Please type Rock, Paper, or Scissors</label>
+         <input class="form__in" list="options" name="options" id="user-input" placeholder="Type here...">
+         <datalist id="options">
+          <option value="Rock">
+          <option value="Paper">
+          <option value="Scissors">
+         </datalist>
+        <button type="submit">Play</button>
+      </form>
+    </section>
+
+    <section class="result-sec">
+      <h4 class="result-sec__result"></h4>
+    </section>
+
+    <footer class="main-ft">
+
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
