@@ -33,3 +33,19 @@ body {
     @include center-items;
   }
 }
+
+.score-sec {
+  display: flex;
+  justify-content: space-evenly;
+
+  &__user,
+  &__computer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.result-sec {
+  @include center-items;
+}
