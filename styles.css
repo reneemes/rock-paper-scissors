@@ -4,6 +4,10 @@ body {
 }
 
 .main-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: #8FBC8F;
   width: 100vw;
   height: 100px;
@@ -24,6 +28,25 @@ body {
   flex-direction: column;
   align-items: center;
 }
+.game-sec button {
+  border: none;
+  border-radius: 8px;
+  background-color: #8FBC8F;
+  width: 200px;
+  font-size: 1.5rem;
+  margin: 10px 0;
+  padding: 5px;
+}
+
+.form__input {
+  border: 2px solid #8FBC8F;
+  border-radius: 8px;
+  background-color: white;
+  width: 200px;
+  font-size: 1rem;
+  margin: 10px 0;
+  padding: 5px;
+}
 
 .score-sec {
   display: flex;
@@ -39,4 +62,19 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.reset-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.reset-box__btn {
+  border: none;
+  border-radius: 8px;
+  background-color: #8FBC8F;
+  width: 200px;
+  font-size: 1.5rem;
+  margin: 10px 0;
+  padding: 5px;
 }/*# sourceMappingURL=styles.css.map */

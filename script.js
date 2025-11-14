@@ -34,45 +34,47 @@ function playGame(userTurn) {
   let userT = userTurn.toLowerCase();
 
   if (userT === compT) {
-    tie(compT);
+    setResult("It's a tie!");
     gameChoices(compT, userT);
   } else if (
     (userT === 'rock' && compT === 'scissors') ||
     (userT === 'paper' && compT === 'rock') ||
     (userT === 'scissors' && compT === 'paper')
   ) {
-    winner()
-    gameChoices(compT, userT);
-    userScore += 1;
+    setResult('You win!')
+    updateScore('user');
+    // userScore++;
+    // userScoreBox.textContent = userScore;
+  } else {
+    setResult('Computer wins!');
+    updateScore('computer');
+    // computerScore++;
+    // computerScoreBox.textContent = computerScore;
+  }
+  gameChoices(compT, userT);
+};
+
+function computerTurn() {
+  return computerOptions[Math.floor(computerOptions.length * Math.random())];
+};
+
+function setResult(message) {
+  resultText.textContent = message;
+};
+
+function updateScore(player) {
+  if (player === 'user') {
+    userScore++;
     userScoreBox.textContent = userScore;
   } else {
-    loser();
-    gameChoices(compT, userT)
-    computerScore += 1;
+    computerScore++;
     computerScoreBox.textContent = computerScore;
   }
 };
 
-function computerTurn() {
-  let randomValue = computerOptions[Math.floor(computerOptions.length * Math.random())];
-  return randomValue
-};
-
-function tie() {
-  resultText.textContent = "It's a tie!";
-};
-
-function winner() {
-  resultText.textContent = 'You win!';
-};
-
-function loser() {
-  resultText.textContent = 'Computer wins!';
-};
-
 function gameChoices(comp, user) {
   computerResult.textContent = `Computer's choice: ${comp}.`;
-  userResult.textContent = `Your choice: ${user}.`
+  userResult.textContent = `Your choice: ${user}.`;
 };
 
 function resetGame() {
@@ -80,4 +82,8 @@ function resetGame() {
   computerScore = 0;
   userScoreBox.textContent = userScore;
   computerScoreBox.textContent = computerScore;
+
+  resultText.textContent = '';
+  computerResult.textContent = '';
+  userResult.textContent = '';
 };

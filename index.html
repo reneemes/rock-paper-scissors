@@ -4,12 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/fdf00391bb.js" crossorigin="anonymous"></script>
   <title>Let's Play!</title>
 </head>
 <body>
   <main>
     <header class="main-header">
       <h3 class="main-header__title">Rock Paper Scissors</h3>
+      <div>
+        <i class="fa-solid fa-hand-back-fist"></i>
+        <i class="fa-solid fa-hand"></i>
+        <i class="fa-solid fa-hand-scissors"></i>
+      </div>
     </header>
 
     <section class="main-sec__welcome">
@@ -19,19 +25,19 @@
     
     <section class="score-sec">
       <div class="score-sec__user">
-        <p>You</p>
-        <p id="user-score"></p>
+        <p>You: <span id="user-score"></span></p>
+         <i class="fa-solid fa-hand fa-rotate-90"></i>
       </div>
       <div class="score-sec__computer">
-        <p>Computer</p>
-        <p id="computer-score"></p>
+        <p>Computer: <span id="computer-score"></span></p>
+        <i class="fa-solid fa-hand-scissors"></i>
       </div>
     </section>
 
     <section class="game-sec">
       <form class="game-sec__form" id="game-form">
         <label class="form__dir">Please type Rock, Paper, or Scissors</label>
-         <input class="form__in" list="options" name="options" id="user-input" placeholder="Type here...">
+         <input class="form__input" list="options" name="options" id="user-input" placeholder="Type here...">
          <datalist id="options">
           <option value="Rock">
           <option value="Paper">
@@ -47,8 +53,8 @@
       <p class="result-sec__com-choice"></p>
     </section>
     
-    <div>
-      <button type="submit" onclick="resetGame()">Reset Game</button>
+    <div class="reset-box">
+      <button class="reset-box__btn" onclick="resetGame()">Reset Game</button>
     </div>
 
     <footer class="main-ft">
