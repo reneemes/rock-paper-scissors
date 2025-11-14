@@ -68,9 +68,16 @@ function winner() {
 
 function loser() {
   resultText.textContent = 'Computer wins!';
-}
+};
 
 function gameChoices(comp, user) {
   computerResult.textContent = `Computer's choice: ${comp}.`;
   userResult.textContent = `Your choice: ${user}.`
+};
+
+function resetGame() {
+  userScore = 0;
+  computerScore = 0;
+  userScoreBox.textContent = userScore;
+  computerScoreBox.textContent = computerScore;
 };
