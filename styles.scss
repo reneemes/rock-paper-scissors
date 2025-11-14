@@ -18,6 +18,20 @@ $accent-color: #8F8FBC;
   padding: 5px;
 }
 
+@keyframes userShake {
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes computerShake {
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
 body {
   margin: 0;
   background-color: $secondary-color;
@@ -78,12 +92,15 @@ body {
 }
 
 .flip {
-  // transform: rotate(90);
-  // transform: rotateY(180deg);
-  // --fa-rotate-angle: 180deg;
-  // transform: scale(1.5) rotate(90deg);
   transform: scaleX(1) rotate(270deg);
 }
+.user-hand-sec {
+  transform-origin: left;
+  animation: userShake 0.8s ease infinite;
+}
+// .computer-hand-sec {
+
+// }
 
 .result-sec {
   @include center-items;

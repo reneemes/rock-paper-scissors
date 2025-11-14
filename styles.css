@@ -1,3 +1,16 @@
+@keyframes userShake {
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes computerShake {
+  50% {
+    transform: rotate(10deg);
+  }
+}
 body {
   margin: 0;
   background-color: #F5FFFA;
@@ -63,6 +76,11 @@ body {
 
 .flip {
   transform: scaleX(1) rotate(270deg);
+}
+
+.user-hand-sec {
+  transform-origin: left;
+  animation: userShake 0.8s ease infinite;
 }
 
 .result-sec {

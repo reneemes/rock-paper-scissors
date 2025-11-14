@@ -1,13 +1,9 @@
 // Form
 const gameForm = document.getElementById('game-form');
 const userInput = document.getElementById('user-input');
-// Text Outputs
+// Text Output
 const resultText = document.querySelector('.result-sec__result');
-// const computerResult = document.querySelector('.result-sec__com-choice');
-// const userResult = document.querySelector('.result-sec__user-choice');
 // Hand Icons
-// const userHand = document.getElementById('user-hand');
-// const computerHand = document.getElementById('computer-hand');
 const userHandSec = document.querySelector('.user-hand-sec');
 const computerHandSec = document.querySelector('.computer-hand-sec');
 // Score Board
@@ -58,7 +54,6 @@ function playGame(userTurn) {
     updateScore('computer');
     setIcons(userT, compT);
   }
-  // gameChoices(compT, userT);
 };
 
 function computerTurn() {
@@ -69,29 +64,31 @@ function setResult(message) {
   resultText.textContent = message;
 };
 
-const userRock = '<i class="fa-solid fa-hand-back-fist fa-rotate-90 fa-5x"></i>';
-const userPaper = '<i class="fa-solid fa-hand fa-rotate-90 fa-5x"></i>';
-const userScissors = '<i class="fa-solid fa-hand-scissors fa-flip-horizontal fa-5x"></i>';
-
-const computerRock = '<div class="flip"><i class="fa-solid fa-hand-back-fist fa-flip-horizontal fa-5x"></i></div>';
-const computerPaper = '<div class="flip"><i class="fa-solid fa-hand fa-flip-horizontal fa-5x"></i></div>';
-const computerScissors = '<i class="fa-solid fa-hand-scissors fa-5x"></i>';
+// Icon HTML
+const icons = {
+  userRock: '<i class="fa-solid fa-hand-back-fist fa-rotate-90 fa-5x"></i>',
+  userPaper: '<i class="fa-solid fa-hand fa-rotate-90 fa-5x"></i>',
+  userScissors: '<i class="fa-solid fa-hand-scissors fa-flip-horizontal fa-5x"></i>',
+  computerRock: '<div class="flip"><i class="fa-solid fa-hand-back-fist fa-flip-horizontal fa-5x"></i></div>',
+  computerPaper: '<div class="flip"><i class="fa-solid fa-hand fa-flip-horizontal fa-5x"></i></div>',
+  computerScissors: '<i class="fa-solid fa-hand-scissors fa-5x"></i>'
+};
 
 function setIcons(userT, compT) {
   if (userT === 'rock') {
-    userHandSec.insertAdjacentHTML('beforeend', userRock);
+    userHandSec.insertAdjacentHTML('beforeend', icons.userRock);
   } else if (userT === 'paper') {
-    userHandSec.insertAdjacentHTML('beforeend', userPaper);
+    userHandSec.insertAdjacentHTML('beforeend', icons.userPaper);
   } else {
-    userHandSec.insertAdjacentHTML('beforeend', userScissors);
+    userHandSec.insertAdjacentHTML('beforeend', icons.userScissors);
   }
 
   if (compT === 'rock') {
-    computerHandSec.insertAdjacentHTML('beforeend', computerRock);
+    computerHandSec.insertAdjacentHTML('beforeend', icons.computerRock);
   } else if (compT === 'paper') {
-    computerHandSec.insertAdjacentHTML('beforeend', computerPaper);
+    computerHandSec.insertAdjacentHTML('beforeend', icons.computerPaper);
   } else {
-    computerHandSec.insertAdjacentHTML('beforeend', computerScissors);
+    computerHandSec.insertAdjacentHTML('beforeend', icons.computerScissors);
   }
 };
 
@@ -105,18 +102,10 @@ function updateScore(player) {
   }
 };
 
-function gameChoices(comp, user) {
-  computerResult.textContent = `Computer's choice: ${comp}.`;
-  userResult.textContent = `Your choice: ${user}.`;
-};
-
 function resetGame() {
   userScore = 0;
   computerScore = 0;
   userScoreBox.textContent = userScore;
   computerScoreBox.textContent = computerScore;
-
   resultText.textContent = '';
-  computerResult.textContent = '';
-  userResult.textContent = '';
 };
