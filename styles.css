@@ -23,4 +23,20 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.score-sec {
+  display: flex;
+  justify-content: space-evenly;
+}
+.score-sec__user, .score-sec__computer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result-sec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }/*# sourceMappingURL=styles.css.map */
