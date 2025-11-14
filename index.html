@@ -11,10 +11,12 @@
   <main>
     <header class="main-header">
       <h3 class="main-header__title">Rock Paper Scissors</h3>
-      <div>
-        <i class="fa-solid fa-hand-back-fist"></i>
-        <i class="fa-solid fa-hand"></i>
-        <i class="fa-solid fa-hand-scissors"></i>
+      <div class="main-header__icons">
+        <i class="fa-solid fa-hand-back-fist fa-2xl"></i>
+        <i class="fa-solid fa-hand fa-2xl"></i>
+        <i class="fa-solid fa-hand-scissors fa-2xl"></i>
+        <!-- <i class="fa-solid fa-hand" style="color: #8f8fbc;"></i> -->
+        <!-- <i class="fa-solid fa-hand" style="color: #bc90bc;"></i> -->
       </div>
     </header>
 
@@ -26,11 +28,11 @@
     <section class="score-sec">
       <div class="score-sec__user">
         <p>You: <span id="user-score"></span></p>
-         <i class="fa-solid fa-hand fa-rotate-90"></i>
+        <div class="user-hand-sec"></div>
       </div>
       <div class="score-sec__computer">
         <p>Computer: <span id="computer-score"></span></p>
-        <i class="fa-solid fa-hand-scissors"></i>
+        <div class="computer-hand-sec"></div>
       </div>
     </section>
 

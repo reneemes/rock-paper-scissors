@@ -1,5 +1,6 @@
 $primary-color: #8FBC8F;
 $secondary-color: #F5FFFA;
+$accent-color: #8F8FBC;
 
 @mixin center-items {
   display: flex;
@@ -32,6 +33,10 @@ body {
   &__title {
     font-size: 2rem;
     margin: 0;
+  }
+
+  &__icons {
+    margin: 10px 0;
   }
 }
 
@@ -70,6 +75,14 @@ body {
     flex-direction: column;
     align-items: center;
   }
+}
+
+.flip {
+  // transform: rotate(90);
+  // transform: rotateY(180deg);
+  // --fa-rotate-angle: 180deg;
+  // transform: scale(1.5) rotate(90deg);
+  transform: scaleX(1) rotate(270deg);
 }
 
 .result-sec {

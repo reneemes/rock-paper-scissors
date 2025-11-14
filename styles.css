@@ -16,6 +16,9 @@ body {
   font-size: 2rem;
   margin: 0;
 }
+.main-header__icons {
+  margin: 10px 0;
+}
 
 .main-sec__welcome {
   display: flex;
@@ -56,6 +59,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.flip {
+  transform: scaleX(1) rotate(270deg);
 }
 
 .result-sec {
