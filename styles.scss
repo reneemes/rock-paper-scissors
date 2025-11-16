@@ -79,7 +79,8 @@ main {
   justify-content: space-evenly;
 
   &__user,
-  &__computer {
+  &__computer,
+  &__tie {
     display: flex;
     flex-direction: column;
     align-items: center;

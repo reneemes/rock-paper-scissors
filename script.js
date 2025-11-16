@@ -22,11 +22,14 @@ const icons = {
 setDefaultHands();
 // Score Board
 const userScoreBox = document.getElementById('user-sec__score');
+const tieScoreBox = document.getElementById('tie-sec__score');
 const computerScoreBox = document.getElementById('computer-sec__score');
 // Default Scores
 let userScore = 0;
+let tieScore = 0;
 let computerScore = 0;
 userScoreBox.textContent = userScore;
+tieScoreBox.textContent = tieScore;
 computerScoreBox.textContent = computerScore;
 // Computer Options
 const computerOptions = ['rock', 'paper', 'scissors'];
@@ -54,6 +57,7 @@ function playGame(userTurn) {
 
   if (userT === compT) {
     setResult("It's a tie!");
+    updateScore('tie');
     setIcons(userT, compT);
   } else if (
     (userT === 'rock' && compT === 'scissors') ||
@@ -109,16 +113,21 @@ function updateScore(player) {
   if (player === 'user') {
     userScore++;
     userScoreBox.textContent = userScore;
-  } else {
+  } else if (player === 'computer') {
     computerScore++;
     computerScoreBox.textContent = computerScore;
+  } else {
+    tieScore++;
+    tieScoreBox.textContent = tieScore;
   }
 };
 
 function resetGame() {
   userScore = 0;
+  tieScore = 0;
   computerScore = 0;
   userScoreBox.textContent = userScore;
+  tieScoreBox.textContent = tieScore;
   computerScoreBox.textContent = computerScore;
   setDefaultHands();
   resultText.textContent = '';

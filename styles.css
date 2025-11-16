@@ -58,12 +58,12 @@ main {
   display: flex;
   justify-content: space-evenly;
 }
-.score-sec__user, .score-sec__computer {
+.score-sec__user, .score-sec__computer, .score-sec__tie {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.score-sec__user p, .score-sec__computer p {
+.score-sec__user p, .score-sec__computer p, .score-sec__tie p {
   font-size: 1.25rem;
 }
 
