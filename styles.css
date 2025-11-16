@@ -1,9 +1,28 @@
+@keyframes userShake {
+  50% {
+    transform: rotate(10deg);
+  }
+}
+@keyframes computerShake {
+  50% {
+    transform: rotate(-10deg);
+  }
+}
 body {
   margin: 0;
+  min-height: 100vh;
   background-color: #F5FFFA;
 }
 
+main {
+  height: 100vh;
+}
+
 .main-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: #8FBC8F;
   width: 100vw;
   height: 100px;
@@ -12,17 +31,37 @@ body {
   font-size: 2rem;
   margin: 0;
 }
+.main-header__icons {
+  margin: 10px 0;
+}
 
 .main-sec__welcome {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+.main-sec__welcome--title {
+  margin: 20px 0 0 0;
+}
 
-.game-sec__form {
+.result-sec {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.result-sec__result {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.form__input {
+  border: 2px solid #8FBC8F;
+  border-radius: 8px;
+  background-color: white;
+  width: 190px;
+  font-size: 1rem;
+  margin: 10px 0;
+  padding: 5px;
 }
 
 .score-sec {
@@ -34,9 +73,90 @@ body {
   flex-direction: column;
   align-items: center;
 }
+.score-sec__user p, .score-sec__computer p {
+  font-size: 1.25rem;
+}
 
-.result-sec {
+.game-sec__form {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.game-sec__form--dir {
+  margin: 10px 0 0 0;
+  font-size: 1.25rem;
+}
+.game-sec button {
+  border: none;
+  border-radius: 8px;
+  background-color: #8FBC8F;
+  width: 200px;
+  font-size: 1.5rem;
+  margin: 10px 0;
+  padding: 5px;
+}
+.game-sec button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.shake-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flip {
+  transform: scaleX(1) rotate(270deg);
+}
+
+.user-shake {
+  animation: userShake 1s ease;
+}
+
+.computer-shake {
+  animation: computerShake 1s ease;
+}
+
+.reset-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.reset-box__btn {
+  border: none;
+  border-radius: 8px;
+  background-color: #8FBC8F;
+  width: 200px;
+  font-size: 1.5rem;
+  margin: 10px 0;
+  padding: 5px;
+}
+.reset-box__btn:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.main-ft {
+  background-color: #8FBC8F;
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+.main-ft p {
+  margin: 15px 0;
+}
+
+@media screen and (min-width: 750px) {
+  .score-sec {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .score-sec {
+    width: 25%;
+  }
 }/*# sourceMappingURL=styles.css.map */

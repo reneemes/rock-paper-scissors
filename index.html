@@ -4,34 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/fdf00391bb.js" crossorigin="anonymous"></script>
   <title>Let's Play!</title>
 </head>
 <body>
   <main>
     <header class="main-header">
       <h3 class="main-header__title">Rock Paper Scissors</h3>
+      <div class="main-header__icons">
+        <i class="fa-solid fa-hand-back-fist fa-2xl"></i>
+        <i class="fa-solid fa-hand fa-2xl"></i>
+        <i class="fa-solid fa-hand-scissors fa-2xl fa-rotate-90"></i>
+      </div>
     </header>
 
     <section class="main-sec__welcome">
       <h2 class="main-sec__welcome--title">Let's Play:</h2>
       <h1 class="main-sec__welcome--subtitle">Rock Paper Scissors!</h1>
     </section>
+
+    <section class="result-sec">
+      <h4 class="result-sec__result"></h4>
+    </section>
     
     <section class="score-sec">
       <div class="score-sec__user">
-        <p>You</p>
-        <p id="user-score"></p>
+        <p>You: <span id="user-score"></span></p>
+        <div class="user-hand-sec"></div>
       </div>
       <div class="score-sec__computer">
-        <p>Computer</p>
-        <p id="computer-score"></p>
+        <p>Computer: <span id="computer-score"></span></p>
+        <div class="computer-hand-sec"></div>
       </div>
     </section>
 
     <section class="game-sec">
       <form class="game-sec__form" id="game-form">
-        <label class="form__dir">Please type Rock, Paper, or Scissors</label>
-         <input class="form__in" list="options" name="options" id="user-input" placeholder="Type here...">
+        <label class="game-sec__form--dir" for="user-input">Please type Rock, Paper, or Scissors.</label>
+         <input class="form__input" list="options" name="options" id="user-input" placeholder="Type here...">
          <datalist id="options">
           <option value="Rock">
           <option value="Paper">
@@ -40,19 +50,13 @@
         <button type="submit">Play</button>
       </form>
     </section>
-
-    <section class="result-sec">
-      <h4 class="result-sec__result"></h4>
-      <p class="result-sec__user-choice"></p>
-      <p class="result-sec__com-choice"></p>
-    </section>
     
-    <div>
-      <button type="submit" onclick="resetGame()">Reset Game</button>
+    <div class="reset-box">
+      <button class="reset-box__btn" onclick="resetGame()">Reset Game</button>
     </div>
 
     <footer class="main-ft">
-
+      <p>Thank you for playing.</p>
     </footer>
   </main>
 
