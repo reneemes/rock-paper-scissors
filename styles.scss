@@ -57,10 +57,10 @@ main {
   }
 }
 
-.main-sec__welcome {
+.main-sec {
   @include center-items;
 
-  &--title {
+  &__title {
     margin: 20px 0 0 0;
   }
 }
@@ -72,16 +72,6 @@ main {
     margin: 0;
     font-size: 1.25rem;
   }
-}
-
-.form__input {
-  border: 2px solid $primary-color;
-  border-radius: 8px;
-  background-color: white;
-  width: 190px;
-  font-size: 1rem;
-  margin: 10px 0;
-  padding: 5px;
 }
 
 .score-sec {
@@ -104,18 +94,26 @@ main {
   &__form {
     @include center-items;
 
-    &--dir {
+    .form__directions {
       margin: 10px 0 0 0;
-
       font-size: 1.25rem;
+    }
+
+    #user-input {
+      border: 2px solid $primary-color;
+      border-radius: 8px;
+      background-color: white;
+      width: 190px;
+      font-size: 1rem;
+      margin: 10px 0;
+      padding: 5px;
     }
   }
 
-  button {
+  .form-btn {
     @include btn
   }
 }
-
 
 .shake-wrapper {
   @include center-items;
@@ -133,7 +131,7 @@ main {
   animation: computerShake 1s ease;
 }
 
-.reset-box {
+.reset-sec {
   @include center-items;
 
   &__btn {

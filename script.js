@@ -4,8 +4,8 @@ const userInput = document.getElementById('user-input');
 // Text Output
 const resultText = document.querySelector('.result-sec__result');
 // Hand Icons
-const userHandSec = document.querySelector('.user-hand-sec');
-const computerHandSec = document.querySelector('.computer-hand-sec');
+const userHandSec = document.querySelector('.score-sec__user-hand');
+const computerHandSec = document.querySelector('.score-sec__computer-hand');
 // Icon HTML
 const icons = {
   user: {
@@ -21,8 +21,8 @@ const icons = {
 };
 setDefaultHands();
 // Score Board
-const userScoreBox = document.getElementById('user-score');
-const computerScoreBox = document.getElementById('computer-score');
+const userScoreBox = document.getElementById('user-sec__score');
+const computerScoreBox = document.getElementById('computer-sec__score');
 // Default Scores
 let userScore = 0;
 let computerScore = 0;

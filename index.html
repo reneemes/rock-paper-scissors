@@ -18,9 +18,9 @@
       </div>
     </header>
 
-    <section class="main-sec__welcome">
-      <h2 class="main-sec__welcome--title">Let's Play:</h2>
-      <h1 class="main-sec__welcome--subtitle">Rock Paper Scissors!</h1>
+    <section class="main-sec">
+      <h2 class="main-sec__title">Let's Play:</h2>
+      <h1 class="main-sec__subtitle">Rock Paper Scissors!</h1>
     </section>
 
     <section class="result-sec">
@@ -29,30 +29,30 @@
     
     <section class="score-sec">
       <div class="score-sec__user">
-        <p>You: <span id="user-score"></span></p>
-        <div class="user-hand-sec"></div>
+        <p>You: <span id="user-sec__score"></span></p>
+        <div class="score-sec__user-hand"></div>
       </div>
       <div class="score-sec__computer">
-        <p>Computer: <span id="computer-score"></span></p>
-        <div class="computer-hand-sec"></div>
+        <p>Computer: <span id="computer-sec__score"></span></p>
+        <div class="score-sec__computer-hand"></div>
       </div>
     </section>
 
     <section class="game-sec">
       <form class="game-sec__form" id="game-form">
-        <label class="game-sec__form--dir" for="user-input">Please type Rock, Paper, or Scissors.</label>
+        <label class="form__directions" for="user-input">Please type Rock, Paper, or Scissors.</label>
          <input class="form__input" list="options" name="options" id="user-input" placeholder="Type here...">
          <datalist id="options">
           <option value="Rock">
           <option value="Paper">
           <option value="Scissors">
          </datalist>
-        <button type="submit">Play</button>
+        <button class="form-btn" type="submit">Play</button>
       </form>
     </section>
     
-    <div class="reset-box">
-      <button class="reset-box__btn" onclick="resetGame()">Reset Game</button>
+    <div class="reset-sec">
+      <button class="reset-sec__btn" onclick="resetGame()">Reset Game</button>
     </div>
 
     <footer class="main-ft">
