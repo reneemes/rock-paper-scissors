@@ -19,18 +19,17 @@ $accent-color: #8F8FBC;
 }
 
 @keyframes userShake {
-  50% {
-    transform: rotate(10deg);
-  }
-  100% {
-    transform: none;
-  }
+  50% { transform: rotate(10deg); }
 }
 @keyframes computerShake {
-  50% {
-    transform: rotate(10deg);
-  }
+  50% { transform: rotate(-10deg); }
 }
+
+// @keyframes computerShake {
+//   50% {
+//     transform: rotate(10deg);
+//   }
+// }
 
 body {
   margin: 0;
@@ -91,16 +90,18 @@ body {
   }
 }
 
+.shake-wrapper {
+  @include center-items;
+}
 .flip {
   transform: scaleX(1) rotate(270deg);
 }
-.user-hand-sec {
-  transform-origin: left;
-  animation: userShake 0.8s ease infinite;
+.user-shake {
+  animation: userShake 1s ease;
 }
-// .computer-hand-sec {
-
-// }
+.computer-shake {
+  animation: computerShake 1s ease;
+}
 
 .result-sec {
   @include center-items;

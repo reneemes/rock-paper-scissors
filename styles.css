@@ -2,13 +2,10 @@
   50% {
     transform: rotate(10deg);
   }
-  100% {
-    transform: none;
-  }
 }
 @keyframes computerShake {
   50% {
-    transform: rotate(10deg);
+    transform: rotate(-10deg);
   }
 }
 body {
@@ -74,13 +71,22 @@ body {
   align-items: center;
 }
 
+.shake-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .flip {
   transform: scaleX(1) rotate(270deg);
 }
 
-.user-hand-sec {
-  transform-origin: left;
-  animation: userShake 0.8s ease infinite;
+.user-shake {
+  animation: userShake 1s ease;
+}
+
+.computer-shake {
+  animation: computerShake 1s ease;
 }
 
 .result-sec {

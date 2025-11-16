@@ -6,16 +6,29 @@ const resultText = document.querySelector('.result-sec__result');
 // Hand Icons
 const userHandSec = document.querySelector('.user-hand-sec');
 const computerHandSec = document.querySelector('.computer-hand-sec');
+// Icon HTML
+const icons = {
+  user: {
+    rock: '<div class="shake-wrapper"><i class="fa-solid fa-hand-back-fist fa-rotate-90 fa-5x"></i></div>',
+    paper: '<div class="shake-wrapper"><i class="fa-solid fa-hand fa-rotate-90 fa-5x"></i></div>',
+    scissors: '<div class="shake-wrapper"><i class="fa-solid fa-hand-scissors fa-flip-horizontal fa-5x"></i></div>'
+  },
+  computer: {
+    rock: '<div class="shake-wrapper"><div class="flip"><i class="fa-solid fa-hand-back-fist fa-flip-horizontal fa-5x"></i></div></div>',
+    paper: '<div class="shake-wrapper"><div class="flip"><i class="fa-solid fa-hand fa-flip-horizontal fa-5x"></i></div></div>',
+    scissors: '<div class="shake-wrapper"><i class="fa-solid fa-hand-scissors fa-5x"></i></div>'
+  }
+};
+setDefaultHands();
 // Score Board
 const userScoreBox = document.getElementById('user-score');
 const computerScoreBox = document.getElementById('computer-score');
-
+// Default Scores
 let userScore = 0;
 let computerScore = 0;
-
 userScoreBox.textContent = userScore;
 computerScoreBox.textContent = computerScore;
-
+// Computer Options
 const computerOptions = ['rock', 'paper', 'scissors'];
 
 gameForm.addEventListener('submit', (e) => {
@@ -25,6 +38,7 @@ gameForm.addEventListener('submit', (e) => {
 
   if (!computerOptions.includes(userInput.value.trim().toLowerCase())) {
     console.error('Unexpected value', userInput);
+    setDefaultHands();
     resultText.textContent = 'Invalid input. Please enter Rock, Paper, or Scissors.'
     userInput.value = '';
     return;
@@ -64,32 +78,31 @@ function setResult(message) {
   resultText.textContent = message;
 };
 
-// Icon HTML
-const icons = {
-  userRock: '<i class="fa-solid fa-hand-back-fist fa-rotate-90 fa-5x"></i>',
-  userPaper: '<i class="fa-solid fa-hand fa-rotate-90 fa-5x"></i>',
-  userScissors: '<i class="fa-solid fa-hand-scissors fa-flip-horizontal fa-5x"></i>',
-  computerRock: '<div class="flip"><i class="fa-solid fa-hand-back-fist fa-flip-horizontal fa-5x"></i></div>',
-  computerPaper: '<div class="flip"><i class="fa-solid fa-hand fa-flip-horizontal fa-5x"></i></div>',
-  computerScissors: '<i class="fa-solid fa-hand-scissors fa-5x"></i>'
+function setDefaultHands() {
+  userHandSec.innerHTML = icons.user.rock;
+  computerHandSec.innerHTML = icons.computer.rock;
 };
 
 function setIcons(userT, compT) {
-  if (userT === 'rock') {
-    userHandSec.insertAdjacentHTML('beforeend', icons.userRock);
-  } else if (userT === 'paper') {
-    userHandSec.insertAdjacentHTML('beforeend', icons.userPaper);
-  } else {
-    userHandSec.insertAdjacentHTML('beforeend', icons.userScissors);
-  }
+  userHandSec.insertAdjacentHTML('beforeend', icons.user[userT]);
+  computerHandSec.insertAdjacentHTML('beforeend', icons.computer[compT]);
+  animate();
+};
 
-  if (compT === 'rock') {
-    computerHandSec.insertAdjacentHTML('beforeend', icons.computerRock);
-  } else if (compT === 'paper') {
-    computerHandSec.insertAdjacentHTML('beforeend', icons.computerPaper);
-  } else {
-    computerHandSec.insertAdjacentHTML('beforeend', icons.computerScissors);
-  }
+function animate() {
+  let userIcon = userHandSec.querySelector('.shake-wrapper');
+  let compIcon = computerHandSec.querySelector('.shake-wrapper');
+
+  userIcon.classList.add('user-shake');
+  compIcon.classList.add('computer-shake');
+
+  userIcon.addEventListener('animationend', () => {
+    userIcon.classList.remove('user-shake');
+  });
+
+  compIcon.addEventListener('animationend', () => {
+    compIcon.classList.remove('computer-shake');
+  });
 };
 
 function updateScore(player) {
@@ -107,5 +120,6 @@ function resetGame() {
   computerScore = 0;
   userScoreBox.textContent = userScore;
   computerScoreBox.textContent = computerScore;
+  setDefaultHands();
   resultText.textContent = '';
 };
