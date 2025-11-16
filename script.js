@@ -39,7 +39,7 @@ gameForm.addEventListener('submit', (e) => {
   if (!computerOptions.includes(userInput.value.trim().toLowerCase())) {
     console.error('Unexpected value', userInput);
     setDefaultHands();
-    resultText.textContent = 'Invalid input. Please enter Rock, Paper, or Scissors.'
+    resultText.textContent = 'Invalid input. Please enter Rock, Paper, or Scissors.';
     userInput.value = '';
     return;
   }
@@ -60,7 +60,7 @@ function playGame(userTurn) {
     (userT === 'paper' && compT === 'rock') ||
     (userT === 'scissors' && compT === 'paper')
   ) {
-    setResult('You win!')
+    setResult('You win!');
     updateScore('user');
     setIcons(userT, compT);
   } else {
