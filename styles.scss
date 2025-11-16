@@ -16,6 +16,11 @@ $accent-color: #8F8FBC;
   font-size: 1.5rem;
   margin: 10px 0;
   padding: 5px;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
 }
 
 @keyframes userShake {
@@ -25,15 +30,14 @@ $accent-color: #8F8FBC;
   50% { transform: rotate(-10deg); }
 }
 
-// @keyframes computerShake {
-//   50% {
-//     transform: rotate(10deg);
-//   }
-// }
-
 body {
   margin: 0;
+  min-height: 100vh;
   background-color: $secondary-color;
+}
+
+main {
+  height: 100vh;
 }
 
 .main-header {
@@ -55,16 +59,18 @@ body {
 
 .main-sec__welcome {
   @include center-items;
+
+  &--title {
+    margin: 20px 0 0 0;
+  }
 }
 
-.game-sec {
+.result-sec {
+  @include center-items;
 
-  &__form {
-    @include center-items;
-  }
-
-  button {
-    @include btn
+  &__result {
+    margin: 0;
+    font-size: 1.25rem;
   }
 }
 
@@ -72,7 +78,7 @@ body {
   border: 2px solid $primary-color;
   border-radius: 8px;
   background-color: white;
-  width: 200px;
+  width: 190px;
   font-size: 1rem;
   margin: 10px 0;
   padding: 5px;
@@ -87,24 +93,44 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    p {
+      font-size: 1.25rem;
+    }
   }
 }
+
+.game-sec {
+  &__form {
+    @include center-items;
+
+    &--dir {
+      margin: 10px 0 0 0;
+
+      font-size: 1.25rem;
+    }
+  }
+
+  button {
+    @include btn
+  }
+}
+
 
 .shake-wrapper {
   @include center-items;
 }
+
 .flip {
   transform: scaleX(1) rotate(270deg);
 }
+
 .user-shake {
   animation: userShake 1s ease;
 }
+
 .computer-shake {
   animation: computerShake 1s ease;
-}
-
-.result-sec {
-  @include center-items;
 }
 
 .reset-box {
@@ -112,5 +138,30 @@ body {
 
   &__btn {
     @include btn
+  }
+}
+
+.main-ft {
+  background-color: $primary-color;
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+
+  p {
+    margin: 15px 0;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .score-sec {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .score-sec {
+    width: 25%;
   }
 }

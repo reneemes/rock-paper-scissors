@@ -14,15 +14,17 @@
       <div class="main-header__icons">
         <i class="fa-solid fa-hand-back-fist fa-2xl"></i>
         <i class="fa-solid fa-hand fa-2xl"></i>
-        <i class="fa-solid fa-hand-scissors fa-2xl"></i>
-        <!-- <i class="fa-solid fa-hand" style="color: #8f8fbc;"></i> -->
-        <!-- <i class="fa-solid fa-hand" style="color: #bc90bc;"></i> -->
+        <i class="fa-solid fa-hand-scissors fa-2xl fa-rotate-90"></i>
       </div>
     </header>
 
     <section class="main-sec__welcome">
       <h2 class="main-sec__welcome--title">Let's Play:</h2>
       <h1 class="main-sec__welcome--subtitle">Rock Paper Scissors!</h1>
+    </section>
+
+    <section class="result-sec">
+      <h4 class="result-sec__result"></h4>
     </section>
     
     <section class="score-sec">
@@ -38,7 +40,7 @@
 
     <section class="game-sec">
       <form class="game-sec__form" id="game-form">
-        <label class="form__dir">Please type Rock, Paper, or Scissors</label>
+        <label class="game-sec__form--dir" for="user-input">Please type Rock, Paper, or Scissors.</label>
          <input class="form__input" list="options" name="options" id="user-input" placeholder="Type here...">
          <datalist id="options">
           <option value="Rock">
@@ -48,17 +50,13 @@
         <button type="submit">Play</button>
       </form>
     </section>
-
-    <section class="result-sec">
-      <h4 class="result-sec__result"></h4>
-    </section>
     
     <div class="reset-box">
       <button class="reset-box__btn" onclick="resetGame()">Reset Game</button>
     </div>
 
     <footer class="main-ft">
-
+      <p>Thank you for playing.</p>
     </footer>
   </main>
 
